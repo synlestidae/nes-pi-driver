@@ -1,5 +1,7 @@
 obj-m += nes.o
-all:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules 
+hver = 4.19.66-v7+
+LDLIBS = -lwiringPi
+all: 
+	make -C /lib/modules/$(hver)/build M=$(PWD) modules
 clean:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+	make -C /lib/modules/$(hver)/build M=$(PWD) clean
